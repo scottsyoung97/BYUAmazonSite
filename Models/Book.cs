@@ -8,6 +8,7 @@ namespace BYUAmazon.Models
 {
     public class Book
     {
+        //Create Primary Key for Book
         [Key]
         [Required]
         public int BookID { get; set; }

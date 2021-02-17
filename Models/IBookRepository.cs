@@ -7,6 +7,7 @@ namespace BYUAmazon.Models
 {
     public interface IBookRepository
     {
+        //Create the interface to iterate through
         IQueryable<Book> Books { get; }
     }
 }

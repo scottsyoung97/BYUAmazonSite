@@ -22,6 +22,7 @@ namespace BYUAmazon.Controllers
 
         public IActionResult Index()
         {
+            //pass database information about books to info page
             return View(_repository.Books);
         }
 

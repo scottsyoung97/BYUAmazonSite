@@ -14,6 +14,7 @@ namespace BYUAmazon.Models
         {
             BookDbContext context = application.ApplicationServices.CreateScope().ServiceProvider.GetRequiredService<BookDbContext>();
 
+            //Make sure all migrations are done
             if (context.Database.GetPendingMigrations().Any())
             {
                 context.Database.Migrate();
@@ -21,6 +22,7 @@ namespace BYUAmazon.Models
 
             if (!context.Books.Any())
             {
+                //Add Data to see if it is passing through
                 context.Books.AddRange(
 
                     new Book
