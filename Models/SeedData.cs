@@ -34,7 +34,8 @@ namespace BYUAmazon.Models
                         ISBN = "978-0451419439",
                         classification = "Fiction",
                         category = "Classic",
-                        price = 9.95
+                        price = 9.95,
+                        pages = 1488
                     },
 
                     new Book
@@ -47,7 +48,8 @@ namespace BYUAmazon.Models
                         ISBN = "978-0743270755",
                         classification = "Non-Fiction",
                         category = "Biography",
-                        price = 14.58
+                        price = 14.58,
+                        pages = 944
                     },
 
                     new Book
@@ -59,7 +61,47 @@ namespace BYUAmazon.Models
                         ISBN = "978-0553384611",
                         classification = "Non-Fiction",
                         category = "Biography",
-                        price = 21.54
+                        price = 21.54,
+                        pages = 832
+                    },
+
+                    new Book
+                    {
+                        title = "Hunger Games",
+                        authorFirst = "Suzanne",
+                        authorLast = "Collins",
+                        publisher = "Scholastic Corporation",
+                        ISBN = "978-0439023481",
+                        classification = "Fiction",
+                        category = "Action",
+                        price = 8.00,
+                        pages = 374
+                    },
+
+                    new Book
+                    {
+                        title = "How to Win Friends and Influence People",
+                        authorFirst = "Dale",
+                        authorLast = "Carnegie",
+                        publisher = "Simon & Schuster",
+                        ISBN = "978-1442344815",
+                        classification = "Non-Fiction",
+                        category = "Self-Help",
+                        price = 16.99,
+                        pages = 291
+                    },
+
+                    new Book
+                    {
+                        title = "Night of the Howling Dogs",
+                        authorFirst = "Graham",
+                        authorLast = "Salisbury",
+                        publisher = "Hachette",
+                        ISBN = "978-0440238393",
+                        classification = "Fiction",
+                        category = "Action",
+                        price = 14.58,
+                        pages = 944
                     }
                 );
 

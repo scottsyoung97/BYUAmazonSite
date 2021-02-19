@@ -31,5 +31,7 @@ namespace BYUAmazon.Models
         [Required]
         public double price { get; set; }
 
+        public int pages { get; set; }
+
     }
 }
