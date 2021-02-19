@@ -3,26 +3,29 @@
 }
 
 @model BookListViewModel
-
-<header>
-    <h1>Give the Gift of a Great Book</h1>
-</header>
+<!--added shadow-sm for bootstrap-->
+<div class="shadow-sm">
+    <header>
+        <h1>Give the Gift of a Great Book</h1>
+    </header>
+</div>
 
 @foreach (var x in Model.Books)
 {
-        <div>
-            <!--Display Information about database-->
-            <h4>Title: @x.title</h4>
-            <p>Author Name: @x.authorFirst</p>
-            <p>@x.authorMiddle</p>
-            <p>@x.authorLast</p>
-            <p>Publisher: @x.publisher</p>
-            <p>ISBN: @x.ISBN</p>
-            <p>Classification: @x.classification</p>
-            <p>Category: @x.category</p>
-            <p>Price: $@x.price</p>
-            <p>Pages: @x.pages</p>
-        </div>
+    <!--added alert-dark for bootstrap-->
+    <div class="alert-dark">
+        <!--Display Information about database-->
+        <h4>Title: @x.title</h4>
+        <p>Author Name: @x.authorFirst</p>
+        <p>@x.authorMiddle</p>
+        <p>@x.authorLast</p>
+        <p>Publisher: @x.publisher</p>
+        <p>ISBN: @x.ISBN</p>
+        <p>Classification: @x.classification</p>
+        <p>Category: @x.category</p>
+        <p>Price: $@x.price</p>
+        <p>Pages: @x.pages</p>
+    </div>
 }
-
-<div page-model="@Model.PagingInfo" page-action="Index"></div>
+<!--added shadow for bootstrap-->
+<div class="shadow" page-model="@Model.PagingInfo" page-action="Index"></div>

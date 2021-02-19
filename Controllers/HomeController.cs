@@ -28,6 +28,7 @@ namespace BYUAmazon.Controllers
             //pass database information about books to info page
             return View(new BookListViewModel
             {
+                //Pass database as well as number of pages needed to dynamically create html page
                 Books = _repository.Books.OrderBy(p => p.BookID).Skip((page - 1) * PageSize).Take(PageSize),
                 PagingInfo = new PagingInfo
                 {

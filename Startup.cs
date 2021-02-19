@@ -57,6 +57,7 @@ namespace BYUAmazon
 
             app.UseEndpoints(endpoints =>
             {
+                //Make URLS simpler
                 endpoints.MapControllerRoute(
                         "pagination",
                         "P{page}",
