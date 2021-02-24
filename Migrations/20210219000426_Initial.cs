@@ -20,7 +20,8 @@ namespace BYUAmazon.Migrations
                     ISBN = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     classification = table.Column<string>(type: "nvarchar(max)", nullable: false),
                     category = table.Column<string>(type: "nvarchar(max)", nullable: false),
-                    price = table.Column<double>(type: "float", nullable: false)
+                    price = table.Column<double>(type: "float", nullable: false),
+                    pages = table.Column<int>(type: "int", nullable: false)
                 },
                 constraints: table =>
                 {

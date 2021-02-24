@@ -2,24 +2,34 @@
     ViewData["Title"] = "Home Page";
 }
 
-@model IQueryable<Book>
+@model BookListViewModel
 
-<header>
-    <h1>Give the Gift of a Great Book</h1>
-</header>
-
-@foreach (var x in Model)
+@foreach (var x in Model.Books)
 {
-        <div>
-            <!--Display Information about database-->
-            <h4>Title: @x.title</h4>
-            <p>Author Name: @x.authorFirst</p>
-            <p>@x.authorMiddle</p>
-            <p>@x.authorLast</p>
-            <p>Publisher: @x.publisher</p>
-            <p>ISBN: @x.ISBN</p>
-            <p>Classification: @x.classification</p>
-            <p>Category: @x.category</p>
-            <p>Price: $@x.price</p>
-        </div>
+    
+<div class="card card-outline-primary m-1 p-1">
+    <!--added alert-dark for bootstrap-->
+    <div class="alert-dark">
+        <!--Display Information about database-->
+        <h4>
+        Title: @x.title
+            <span class="badge badge-pill badge-primary" style="float:right">
+                <p>Pages: @x.pages</p>
+            </span>
+        </h4>
+        <p>Author Name: @x.authorFirst</p>
+        <p>@x.authorMiddle</p>
+        <p>@x.authorLast</p>
+        <p>Publisher: @x.publisher</p>
+        <p>ISBN: @x.ISBN</p>
+        <p>Classification: @x.classification</p>
+        <p>Category: @x.category</p>
+        <p>Price: $@x.price</p>
+    </div>
+</div>
 }
+<!--added shadow for bootstrap-->
+<div page-model="@Model.PagingInfo" page-action="Index" page-classes-enabled="true" page-class="btn"
+     page-class-normal="btn-outline-dark"
+     page-class-selected="btn-primary"
+     class="shadow btn-group pull-right m-1"></div>
