@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="~/css/site.css" />
 </head>
 <body>
-    <!--<header>
+    <header>
         <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
             <div class="container">
                 <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">BYUAmazon</a>
@@ -28,11 +28,13 @@
                 </div>
             </div>
         </nav>
-    </header>-->
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
-        </main>
+    </header>
+    <div class="row m-1 p-1">
+        <!--added shadow-sm for bootstrap-->
+        <div class="shadow-sm col-4">
+            <h1>Give the Gift of a Great Book</h1>
+        </div>
+        <div class="col-8">@RenderBody()</div>
     </div>
 
     <!--<footer class="border-top footer text-muted">
