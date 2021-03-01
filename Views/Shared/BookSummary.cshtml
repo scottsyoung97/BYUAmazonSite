@@ -1,0 +1,22 @@
+﻿@model Book 
+
+<div class="card card-outline-primary m-1 p-1">
+    <!--added alert-dark for bootstrap-->
+    <div class="alert-dark">
+        <!--Display Information about database-->
+        <h4>
+            Title: @Model.title
+            <span class="badge badge-pill badge-primary" style="float:right">
+                <p>Pages: @Model.pages</p>
+            </span>
+        </h4>
+        <p>Author Name: @Model.authorFirst</p>
+        <p>@Model.authorMiddle</p>
+        <p>@Model.authorLast</p>
+        <p>Publisher: @Model.publisher</p>
+        <p>ISBN: @Model.ISBN</p>
+        <p>Classification: @Model.classification</p>
+        <p>Category: @Model.category</p>
+        <p>Price: $@Model.price</p>
+    </div>
+</div>

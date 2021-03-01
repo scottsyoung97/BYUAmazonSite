@@ -22,20 +22,27 @@ namespace BYUAmazon.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(int page = 1)
+        public IActionResult Index(string category, int page = 1)
         {
-            
+
             //pass database information about books to info page
             return View(new BookListViewModel
             {
                 //Pass database as well as number of pages needed to dynamically create html page
-                Books = _repository.Books.OrderBy(p => p.BookID).Skip((page - 1) * PageSize).Take(PageSize),
+                Books = _repository.Books
+                    .Where(p => category == null || p.category == category)
+                    .OrderBy(p => p.BookID)
+                    .Skip((page - 1) * PageSize)
+                    .Take(PageSize),
                 PagingInfo = new PagingInfo
                 {
                     CurrentPage = page,
                     ItemsPerPage = PageSize,
-                    TotalNumItems = _repository.Books.Count()
-                }
+                    //dynamically create the pages according to category if category is present
+                    TotalNumItems = category == null ? _repository.Books.Count() :
+                        _repository.Books.Where(x => x.category == category).Count()
+                },
+                Category = category
             });
                 
         }
