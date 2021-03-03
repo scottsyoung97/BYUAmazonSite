@@ -57,6 +57,18 @@ namespace BYUAmazon
 
             app.UseEndpoints(endpoints =>
             {
+                endpoints.MapControllerRoute("catpage",
+                    "{category}/{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("page",
+                    "{page:int}",
+                    new { Controller = "Home", action = "Index" });
+
+                endpoints.MapControllerRoute("category",
+                    "{category}",
+                     new { Controller = "Home", action = "Index", page = 1 });
+
                 //Make URLS simpler
                 endpoints.MapControllerRoute(
                         "pagination",
