@@ -22,7 +22,7 @@ namespace BYUAmazon.Controllers
             _repository = repository;
         }
 
-        public IActionResult Index(string category, int page = 1)
+        public IActionResult Index(string category, int pageNum = 1)
         {
 
             //pass database information about books to info page
@@ -32,11 +32,11 @@ namespace BYUAmazon.Controllers
                 Books = _repository.Books
                     .Where(p => category == null || p.category == category)
                     .OrderBy(p => p.BookID)
-                    .Skip((page - 1) * PageSize)
+                    .Skip((pageNum - 1) * PageSize)
                     .Take(PageSize),
                 PagingInfo = new PagingInfo
                 {
-                    CurrentPage = page,
+                    CurrentPage = pageNum,
                     ItemsPerPage = PageSize,
                     //dynamically create the pages according to category if category is present
                     TotalNumItems = category == null ? _repository.Books.Count() :
